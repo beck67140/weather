@@ -122,7 +122,13 @@ body {
     color: #0f172a;
 }
 
+.highLowDisplay,
 .humidityDisplay,
+.pressureDisplay,
+.windDisplay,
+.precipDisplay,
+.sunriseDisplay,
+.sunsetDisplay,
 .descDisplay,
 .dateDisplay {
     margin: 0;
