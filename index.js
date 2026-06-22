@@ -1,4 +1,3 @@
-
 const weatherForm = document.querySelector('.weather-form');
 const cityInput = document.querySelector('.cityInput');
 const card = document.querySelector('.card');
@@ -125,22 +124,22 @@ function getWindDirection(deg) {
 }
 
 function formatLocalDate(timestamp, timezoneOffset) {
+    if (timestamp == null || timezoneOffset == null) return 'N/A';
     const localTime = new Date((timestamp + timezoneOffset) * 1000);
-    return localTime.toLocaleString(undefined, {
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
+    const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const weekday = weekdays[localTime.getUTCDay()];
+    const month = months[localTime.getUTCMonth()];
+    const day = localTime.getUTCDate();
+    return `${weekday}, ${month} ${day}`;
 }
 
 function formatLocalTime(timestamp, timezoneOffset) {
+    if (timestamp == null || timezoneOffset == null) return 'N/A';
     const localTime = new Date((timestamp + timezoneOffset) * 1000);
-    return localTime.toLocaleTimeString(undefined, {
-        hour: '2-digit',
-        minute: '2-digit'
-    });
+    const hour = String(localTime.getUTCHours()).padStart(2, '0');
+    const minute = String(localTime.getUTCMinutes()).padStart(2, '0');
+    return `${hour}:${minute}`;
 }
 
 function capitalize(text) {
