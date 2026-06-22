@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="app-header">
+            <h1>Weather App</h1>
+            <p>Search any city to view the current temperature, humidity, and sky conditions.</p>
+        </header>
+
+        <form class="weather-form" aria-label="Weather search form">
+            <label for="city-input">City name</label>
+            <input id="city-input" type="text" class="cityInput" placeholder="e.g. Paris" autocomplete="off">
+            <button type="submit" class="submitBtn">Get Weather</button>
+        </form>
+
+        <section class="card hidden" aria-live="polite" aria-atomic="true">
+            <p class="weatherEmoji"></p>
+            <p class="cityDisplay"></p>
+            <p class="tempDisplay"></p>
+            <p class="humidityDisplay"></p>
+            <p class="descDisplay"></p>
+            <p class="dateDisplay"></p>
+        </section>
+
+        <p class="footer">Powered by OpenWeatherMap</p>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
